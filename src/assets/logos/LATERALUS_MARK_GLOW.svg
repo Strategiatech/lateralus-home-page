@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 374" width="210" height="374" role="img" aria-label="Lateralus mark (doorway) (glow)">
+  <defs>
+    <filter id="softGoldGlow" x="-55%" y="-35%" width="210%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#F99C1C" flood-opacity="0.72" />
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#F99C1C" flood-opacity="0.34" />
+      <feDropShadow dx="0" dy="0" stdDeviation="34" flood-color="#F6B65A" flood-opacity="0.18" />
+    </filter>
+  </defs>
+  <path filter="url(#softGoldGlow)" d="M 0 187.514 L 0 374.009 105.250 373.755 L 210.500 373.500 210.753 187 L 211.005 0.500 105.503 0.759 L 0 1.018 0 187.514 M 0.490 187.500 C 0.490 290.350, 0.607 332.277, 0.750 280.671 C 0.893 229.064, 0.893 144.914, 0.750 93.671 C 0.607 42.427, 0.490 84.650, 0.490 187.500 M 8 17.792 C 8 18.227, 10.025 20.571, 12.500 23 L 17 27.416 17 187.424 L 17 347.431 12.288 352.216 L 7.575 357 105 357 L 202.425 357 197.712 352.216 L 193 347.431 193 187.424 L 193 27.416 197.500 23 C 199.975 20.571, 202 18.227, 202 17.792 C 202 17.356, 158.350 17, 105 17 C 51.650 17, 8 17.356, 8 17.792" fill="#F99C1C" fill-rule="evenodd" />
+</svg>

@@ -1,0 +1,131 @@
+/* =========================================================================
+   LATERALUS — brand tokens & global styles
+   Aurora Black #292827 · White Sand #FDF7EE · Solar Flare #F99C1C · Deep Red #260600
+   Display: Literata · Headings: Inter Tight · Body: Inter
+   ========================================================================= */
+
+:root {
+  /* Core palette (from brand guidelines) */
+  --aurora-black: #292827;
+  --white-sand: #fdf7ee;
+  --solar-flare: #f99c1c;
+  --deep-red: #260600;
+
+  /* Derived tones for depth on dark backgrounds */
+  --black-0: #1a1918;   /* deepest — voids, behind the door */
+  --black-1: #1f1e1d;   /* page base */
+  --black-2: #242322;   /* raised surfaces / cards */
+  --black-3: #2e2c2a;   /* hairlines / borders base */
+
+  --sand: var(--white-sand);
+  --sand-dim: rgba(253, 247, 238, 0.62);
+  --sand-faint: rgba(253, 247, 238, 0.34);
+  --sand-ghost: rgba(253, 247, 238, 0.12);
+
+  --gold: var(--solar-flare);
+  --gold-soft: #f6b65a;
+  --gold-pale: #ffd79b;
+
+  /* Golden glow gradient (radial: Sand -> Solar Flare -> Deep Red) */
+  --glow-radial: radial-gradient(
+    120% 120% at 28% 22%,
+    var(--white-sand) 0%,
+    var(--gold-pale) 14%,
+    var(--solar-flare) 46%,
+    #8a4d12 78%,
+    var(--deep-red) 100%
+  );
+  --glow-line: linear-gradient(
+    155deg,
+    var(--white-sand) 0%,
+    var(--gold-pale) 18%,
+    var(--solar-flare) 52%,
+    #93500f 86%,
+    var(--deep-red) 100%
+  );
+
+  --hairline: rgba(253, 247, 238, 0.14);
+  --hairline-strong: rgba(253, 247, 238, 0.22);
+
+  /* Type */
+  --font-display: 'Literata', Georgia, 'Times New Roman', serif;
+  --font-head: 'Inter Tight', -apple-system, system-ui, sans-serif;
+  --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-door: cubic-bezier(0.65, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--black-1);
+  color: var(--sand);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: rgba(249, 156, 28, 0.28);
+  color: var(--white-sand);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Film-grain / texture overlay used across dark surfaces */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Shared eyebrow / label treatment */
+.eyebrow {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
