@@ -15,16 +15,17 @@ export default function Contact() {
       <div className="contact__inner">
         <Reveal className="contact__copy">
           <span className="eyebrow">Contact</span>
-          <h2>Start a conversation.</h2>
+          <h2>Start a <span className="contact__accent">conversation.</span></h2>
           <p>
             For partnerships, strategic opportunities and group enquiries, leave
             the essentials and we will direct the conversation to the right team.
           </p>
 
           <div className="contact__routes" aria-label="Contact routes">
-            <a href="#ecosystem">Companies</a>
+            <a href="#about">Group</a>
+            <a href="#ecosystem">Ecosystem</a>
             <a href="#leadership">Leadership</a>
-            <a href="#top">Group</a>
+            <a href="#contact">Contact</a>
           </div>
         </Reveal>
 

@@ -185,6 +185,22 @@ a.site__footer-link:hover {
 .site__footer-accent {
   color: var(--gold-soft);
 }
+
+/* little gold dot before each Global Locations item */
+.site__footer-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.site__footer-loc::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.55;
+}
 .site__footer-bottom {
   display: flex;
   align-items: center;

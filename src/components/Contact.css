@@ -39,6 +39,10 @@
   line-height: 1.08;
 }
 
+.contact__accent {
+  color: var(--gold-soft);
+}
+
 .contact__copy p {
   max-width: 37ch;
   color: rgba(253, 247, 238, 0.58);
