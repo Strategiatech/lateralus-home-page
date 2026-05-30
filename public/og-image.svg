@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Lateralus social preview">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#2b2118"/>
+      <stop offset="48%" stop-color="#151311"/>
+      <stop offset="100%" stop-color="#070606"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="52%" r="55%">
+      <stop offset="0%" stop-color="#f99c1c" stop-opacity="0.36"/>
+      <stop offset="50%" stop-color="#f99c1c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f99c1c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="doorGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf7ee"/>
+      <stop offset="32%" stop-color="#ffd79b"/>
+      <stop offset="68%" stop-color="#f99c1c"/>
+      <stop offset="100%" stop-color="#8d4a0b"/>
+    </linearGradient>
+    <filter id="softGlow" x="-140%" y="-140%" width="380%" height="380%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.98 0 1 0 0 0.57 0 0 1 0 0.06 0 0 0 0.72 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grain" width="88" height="88" patternUnits="userSpaceOnUse">
+      <rect width="88" height="88" fill="transparent"/>
+      <circle cx="14" cy="21" r="0.8" fill="#fdf7ee" opacity="0.06"/>
+      <circle cx="51" cy="12" r="0.7" fill="#f99c1c" opacity="0.05"/>
+      <circle cx="73" cy="61" r="0.9" fill="#fdf7ee" opacity="0.04"/>
+      <circle cx="30" cy="76" r="0.6" fill="#f99c1c" opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grain)" opacity="0.8"/>
+  <circle cx="600" cy="302" r="300" fill="url(#goldGlow)"/>
+  <path d="M0 514H1200" stroke="#fdf7ee" stroke-opacity="0.08"/>
+  <path d="M322 486H878" stroke="#f99c1c" stroke-opacity="0.18"/>
+  <path d="M378 165H822" stroke="#f99c1c" stroke-opacity="0.44" filter="url(#softGlow)"/>
+
+  <g transform="translate(161 157)" filter="url(#softGlow)">
+    <rect x="0" y="0" width="84" height="154" fill="none" stroke="url(#doorGold)" stroke-width="6"/>
+    <rect x="14" y="14" width="56" height="126" fill="#16120f" stroke="#f99c1c" stroke-opacity="0.32" stroke-width="2"/>
+    <path d="M0 154H84" stroke="#f99c1c" stroke-opacity="0.42" stroke-width="3"/>
+  </g>
+
+  <text x="282" y="252" fill="#fdf7ee" font-family="Georgia, 'Times New Roman', serif" font-size="72" letter-spacing="22" font-weight="400">LATERALUS</text>
+  <text x="283" y="329" fill="#f99c1c" font-family="Inter, Arial, sans-serif" font-size="20" letter-spacing="8" font-weight="600">OPERATING GROUP</text>
+  <text x="282" y="397" fill="#fdf7ee" font-family="Georgia, 'Times New Roman', serif" font-size="37" font-weight="400">Lateral intelligence. Parallel execution.</text>
+  <text x="282" y="449" fill="#f7bf75" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="400">One ecosystem.</text>
+</svg>
