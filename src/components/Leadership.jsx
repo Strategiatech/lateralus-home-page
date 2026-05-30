@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx'
 import { SeedOfLife } from './icons.jsx'
 import michaelMurrayPhoto from '../assets/leadership/michael-murray.png'
 import jamesScottPhoto from '../assets/leadership/james-scott.png'
-import davidTaylorPhoto from '../assets/leadership/david-taylor.png'
+import davidTaylorPhoto from '../assets/leadership/david-taylor-profile.jpeg'
 import './Leadership.css'
 
 const PEOPLE = [
@@ -25,17 +25,19 @@ const PEOPLE = [
     position: '50% 48%',
     bio: [
       'James Scott is Group Chief Executive Officer of Lateralus, leading international growth, operating execution and commercial scale across C-Suite Partners and Strategia.',
-      'James brings more than 20 years of experience building and scaling workforce, talent and technology-enabled businesses across Australia, New Zealand, the UK, North America and Southeast Asia. He has operated as CEO across complex regulated markets, leading businesses where people, systems, technology and commercial performance need to move together.',
+      'James brings more than 30 years of experience building and scaling workforce, talent and technology-enabled businesses across Australia, New Zealand, the UK, North America and Southeast Asia. He has operated as CEO across complex regulated markets, leading businesses where people, systems, technology and commercial performance need to move together.',
       "At Lateralus, James is focused on scaling the group internationally, strengthening operating discipline and bringing Strategia's workforce intelligence platform to market with enterprise credibility.",
     ],
   },
   {
     name: 'David Taylor',
-    role: 'Group Managing Director',
+    role: 'Managing Director',
     photo: davidTaylorPhoto,
-    position: '50% 48%',
+    position: '46% 40%',
+    scale: 1.22,
+    origin: '46% 38%',
     bio: [
-      "David Taylor is Group Managing Director of Lateralus, supporting international growth, enterprise delivery and operating execution across the group's core markets.",
+      "David Taylor is Managing Director of Lateralus, supporting international growth, enterprise delivery and operating execution across the group's core markets.",
       'David brings more than 25 years of experience scaling workforce, managed services and technology-enabled businesses across the Middle East, UK, Europe, APAC and Africa. His career includes senior leadership roles with Randstad, Adecco and Impellam Group, alongside deep experience supporting healthcare and workforce transformation across complex international environments.',
       'At Lateralus, David focuses on regional growth, enterprise partnerships, and the practical application of technology and AI across workforce systems. His strength is turning strategy, people, systems and technology into commercial outcomes across multiple markets.',
     ],
@@ -53,7 +55,15 @@ function Person({ person, delay }) {
         <div className="person__frame">
           <div className="person__well">
             {person.photo ? (
-              <img src={person.photo} alt={person.name} style={{ objectPosition: person.position }} />
+              <img
+                src={person.photo}
+                alt={person.name}
+                style={{
+                  objectPosition: person.position,
+                  transform: person.scale ? `scale(${person.scale})` : undefined,
+                  transformOrigin: person.origin,
+                }}
+              />
             ) : (
               <div className="person__placeholder">
                 <span className="person__initial">{person.name[0]}</span>

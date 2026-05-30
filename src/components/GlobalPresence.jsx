@@ -4,7 +4,7 @@ import './GlobalPresence.css'
 const REGIONS = [
   'Australasia',
   'Southeast Asia',
-  'The Gulf',
+  'Middle East',
   'North America',
   'United Kingdom',
   'Europe',
