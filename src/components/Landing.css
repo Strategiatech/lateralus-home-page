@@ -93,7 +93,8 @@
   flex-direction: column;
   align-items: center;
   gap: clamp(18px, 3vh, 34px);
-  transform: translateY(6%);
+  transform-origin: 50% 45%;
+  will-change: transform, filter;
 }
 
 .doorway {
@@ -109,6 +110,39 @@
   isolation: isolate;
   transform-style: preserve-3d;
   transition: filter 0.75s var(--ease-silk), transform 0.75s var(--ease-silk);
+}
+
+.doorway::after {
+  content: '';
+  position: absolute;
+  left: -76%;
+  right: -76%;
+  bottom: 12.3%;
+  z-index: 2;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(249, 156, 28, 0.08) 12%,
+    rgba(249, 156, 28, 0.32) 25%,
+    rgba(255, 226, 174, 0.46) 39%,
+    transparent 47%,
+    transparent 53%,
+    rgba(255, 226, 174, 0.46) 61%,
+    rgba(249, 156, 28, 0.32) 75%,
+    rgba(249, 156, 28, 0.08) 88%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px rgba(249, 156, 28, 0.28),
+    0 2px 18px rgba(249, 156, 28, 0.16);
+  opacity: 0.58;
+  pointer-events: none;
+  transform: translateY(1px);
+  transition:
+    opacity 0.9s var(--ease-silk),
+    box-shadow 0.9s var(--ease-silk),
+    transform 0.9s var(--ease-silk);
 }
 
 .doorway__frame {
@@ -220,8 +254,9 @@
   overflow: hidden;
   border-radius: 1px;
   background:
-    linear-gradient(to bottom, rgba(8, 8, 8, 0.16), transparent 28%, rgba(3, 3, 3, 0.3) 100%),
-    url('../assets/door-scene.png') center / cover no-repeat;
+    radial-gradient(60% 38% at 50% 58%, rgba(249, 156, 28, 0.16), rgba(249, 156, 28, 0.035) 42%, transparent 74%),
+    radial-gradient(50% 30% at 50% 96%, rgba(255, 221, 168, 0.14), transparent 72%),
+    linear-gradient(90deg, rgba(6, 4, 3, 0.98), #000 18%, #000 82%, rgba(6, 4, 3, 0.98));
   clip-path: inset(0% 0% 0% 0%);
   opacity: 1;
   filter: saturate(0.58) brightness(0.58) contrast(1.08);
@@ -230,7 +265,7 @@
 
 .landing.is-hot .door-scene,
 .landing.is-opening .door-scene {
-  filter: saturate(0.72) brightness(0.82) contrast(1.08);
+  filter: saturate(0.92) brightness(0.96) contrast(1.04);
 }
 
 .doorway__void {
@@ -369,6 +404,15 @@
   transform: scale(1.006);
 }
 
+.landing.is-hot .doorway::after,
+.landing.is-opening .doorway::after {
+  opacity: 0.86;
+  box-shadow:
+    0 0 10px rgba(255, 210, 132, 0.38),
+    0 3px 24px rgba(249, 156, 28, 0.24);
+  transform: translateY(0);
+}
+
 .landing.is-hot .doorway__frame,
 .landing.is-opening .doorway__frame {
   filter: saturate(0.88) contrast(1) brightness(0.84);
@@ -417,7 +461,7 @@
 }
 
 .landing.is-opening .doorway__panel {
-  transition-duration: 0.72s;
+  transition-duration: 1.38s;
 }
 
 .landing__enter {
@@ -445,7 +489,6 @@
 @media (max-width: 720px) {
   .landing__cluster {
     gap: clamp(14px, 2.4vh, 24px);
-    transform: translateY(5%);
   }
 
   .doorway {

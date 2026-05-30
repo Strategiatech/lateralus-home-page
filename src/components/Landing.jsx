@@ -11,7 +11,7 @@ export default function Landing({ onEnter }) {
     if (opening) return
     setOpening(true)
     setHot(false)
-    window.setTimeout(() => onEnter?.(), 420)
+    window.setTimeout(() => onEnter?.(), 1900)
   }, [opening, onEnter])
 
   const onKey = (e) => {
@@ -22,12 +22,18 @@ export default function Landing({ onEnter }) {
   }
 
   const portalTransition = opening
-    ? { duration: 0.62, ease: [0.65, 0, 0.2, 1] }
+    ? { duration: 1.28, ease: [0.65, 0, 0.2, 1] }
     : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }
 
   const fade = opening ? { opacity: 0, transition: { duration: 0.6, ease: 'easeOut' } } : { opacity: 1 }
-  // The interior scene sits permanently behind the doors at full size; opening the
-  // panels simply uncovers it, rather than the scene expanding/fading in.
+  const cameraMove = opening
+    ? { scale: 2.45, y: '-7vh', filter: 'brightness(1.08)' }
+    : { scale: 1, y: '3.5vh', filter: 'brightness(1)' }
+  const cameraTransition = opening
+    ? { duration: 1.9, ease: 'linear' }
+    : { duration: 0.85, ease: [0.22, 1, 0.36, 1] }
+  // The landing door opens into darkness and warm light only; the scenic image
+  // belongs to the first hero section after the transition.
   const sceneReveal = { opacity: 1, clipPath: 'inset(0% 0% 0% 0%)', scale: 1 }
   const voidReveal = { opacity: 0.08 }
   const apertureReveal = { opacity: 0.72, scaleX: 1 }
@@ -38,7 +44,7 @@ export default function Landing({ onEnter }) {
       <div className="landing__floor" />
       <div className="landing__pool" />
 
-      <div className="landing__cluster">
+      <motion.div className="landing__cluster" animate={cameraMove} transition={cameraTransition}>
         <button
           type="button"
           className="doorway"
@@ -79,7 +85,7 @@ export default function Landing({ onEnter }) {
         >
           <span>ENTER</span>
         </motion.button>
-      </div>
+      </motion.div>
     </div>
   )
 }

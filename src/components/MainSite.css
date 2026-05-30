@@ -3,6 +3,7 @@
   --maxw: 1240px;
   position: relative;
   min-height: 100vh;
+  overflow-x: clip;
   background:
     radial-gradient(140% 82% at 50% -12%, #1d1a17 0%, var(--black-1) 46%, #0b0a09 100%);
 }
