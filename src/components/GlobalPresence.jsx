@@ -2,13 +2,12 @@ import Reveal from './Reveal.jsx'
 import './GlobalPresence.css'
 
 const REGIONS = [
-  'Australia',
-  'Singapore',
-  'United Arab Emirates',
-  'United States',
+  'Australasia',
+  'Southeast Asia',
+  'The Gulf',
+  'North America',
   'United Kingdom',
   'Europe',
-  'Southeast Asia',
 ]
 
 /* Minimalist reach statement between the ecosystem and the people. */
@@ -19,9 +18,13 @@ export default function GlobalPresence() {
         <div className="presence__lead">
           <span className="eyebrow">Global Presence</span>
           <h2 className="presence__title">
-            <span>Built from Australia.</span>
-            <span className="presence__accent">Operating across the world.</span>
+            <span>Operating across the world’s</span>
+            <span className="presence__accent">growth markets.</span>
           </h2>
+          <p className="presence__copy">
+            Connecting leadership, technology and influence across international
+            markets.
+          </p>
         </div>
         <ul className="presence__regions">
           {REGIONS.map((region) => (

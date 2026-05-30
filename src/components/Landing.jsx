@@ -11,7 +11,7 @@ export default function Landing({ onEnter }) {
     if (opening) return
     setOpening(true)
     setHot(false)
-    window.setTimeout(() => onEnter?.(), 1900)
+    window.setTimeout(() => onEnter?.(), 1080)
   }, [opening, onEnter])
 
   const onKey = (e) => {
@@ -22,15 +22,15 @@ export default function Landing({ onEnter }) {
   }
 
   const portalTransition = opening
-    ? { duration: 1.28, ease: [0.65, 0, 0.2, 1] }
+    ? { duration: 1.08, ease: 'linear' }
     : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }
 
   const fade = opening ? { opacity: 0, transition: { duration: 0.6, ease: 'easeOut' } } : { opacity: 1 }
   const cameraMove = opening
-    ? { scale: 2.45, y: '-7vh', filter: 'brightness(1.08)' }
+    ? { scale: 2.08, y: '-5.2vh', filter: 'brightness(1.06)' }
     : { scale: 1, y: '3.5vh', filter: 'brightness(1)' }
   const cameraTransition = opening
-    ? { duration: 1.9, ease: 'linear' }
+    ? { duration: 1.08, ease: 'linear' }
     : { duration: 0.85, ease: [0.22, 1, 0.36, 1] }
   // The landing door opens into darkness and warm light only; the scenic image
   // belongs to the first hero section after the transition.

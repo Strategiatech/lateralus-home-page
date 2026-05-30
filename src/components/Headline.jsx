@@ -6,9 +6,6 @@ export default function Headline() {
   return (
     <section className="headline" id="intro">
       <div className="headline__portal" aria-hidden="true">
-        <span className="headline__portal-line" />
-        <span className="headline__portal-panel headline__portal-panel--left" />
-        <span className="headline__portal-panel headline__portal-panel--right" />
         <span className="headline__portal-scene" />
         <span className="headline__portal-glow" />
       </div>

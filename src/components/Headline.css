@@ -12,8 +12,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(58% 44% at 50% 10%, rgba(249, 156, 28, 0.11), transparent 68%),
-    linear-gradient(180deg, rgba(20, 18, 17, 0.72), rgba(20, 18, 17, 0) 42%);
+    radial-gradient(48% 38% at 50% 24%, rgba(249, 156, 28, 0.035), transparent 70%),
+    linear-gradient(180deg, rgba(20, 18, 17, 0.86), rgba(20, 18, 17, 0) 46%);
 }
 
 .headline__portal {
@@ -24,8 +24,7 @@
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(54% 58% at 50% 48%, rgba(249, 156, 28, 0.12), transparent 68%),
-    linear-gradient(180deg, rgba(22, 20, 18, 0.4), rgba(20, 18, 17, 0.98) 92%);
+    radial-gradient(48% 54% at 50% 56%, rgba(249, 156, 28, 0.04), transparent 72%);
 }
 
 .headline__portal::before {
@@ -34,46 +33,28 @@
   inset: 0;
   z-index: 5;
   background:
-    radial-gradient(42% 48% at 32% 69%, rgba(249, 156, 28, 0.15), transparent 64%),
-    linear-gradient(to bottom, rgba(20, 18, 17, 0.08), rgba(20, 18, 17, 0) 58%, rgba(20, 18, 17, 0.82) 100%),
-    linear-gradient(90deg, rgba(20, 18, 17, 0.82), transparent 24%, transparent 76%, rgba(20, 18, 17, 0.82));
+    radial-gradient(36% 44% at 31% 72%, rgba(249, 156, 28, 0.16), transparent 66%),
+    linear-gradient(to bottom, rgba(20, 18, 17, 0.22), rgba(20, 18, 17, 0) 20%, rgba(20, 18, 17, 0) 64%, rgba(20, 18, 17, 0.62) 100%);
   pointer-events: none;
-}
-
-.headline__portal-line {
-  position: absolute;
-  top: 10.5%;
-  left: 18%;
-  right: 18%;
-  z-index: 4;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 226, 174, 0.92) 12%, rgba(249, 156, 28, 0.78) 50%, rgba(255, 226, 174, 0.92) 88%, transparent);
-  box-shadow: 0 0 14px rgba(249, 156, 28, 0.42);
 }
 
 .headline__portal-scene {
   position: absolute;
-  top: 10.5%;
+  top: 0;
   bottom: 0;
-  left: 18%;
-  right: 18%;
+  left: 0;
+  right: 0;
   z-index: 1;
   background:
-    linear-gradient(to bottom, rgba(20, 18, 17, 0.06), transparent 34%, rgba(20, 18, 17, 0.54) 100%),
-    url('../assets/door-scene.png') center 58% / cover no-repeat;
-  filter: saturate(0.94) brightness(0.96) contrast(1.02);
+    linear-gradient(to bottom, rgba(20, 18, 17, 0.02), transparent 38%, rgba(20, 18, 17, 0.28) 100%),
+    url('../assets/door-scene.png') center 56% / 112% auto no-repeat;
+  filter: saturate(1.04) brightness(1.18) contrast(1.03);
   opacity: 1;
   box-shadow:
-    inset 0 0 42px rgba(20, 18, 17, 0.74),
-    inset 0 -64px 64px rgba(20, 18, 17, 0.66);
-  mask-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.92), #000 18%, #000 78%, rgba(0, 0, 0, 0.34) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.28), #000 13%, #000 87%, rgba(0, 0, 0, 0.28));
-  mask-composite: intersect;
-  -webkit-mask-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.92), #000 18%, #000 78%, rgba(0, 0, 0, 0.34) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.28), #000 13%, #000 87%, rgba(0, 0, 0, 0.28));
-  -webkit-mask-composite: source-in;
+    inset 0 0 30px rgba(20, 18, 17, 0.48),
+    inset 0 -50px 52px rgba(20, 18, 17, 0.46);
+  mask-image: radial-gradient(ellipse 56% 78% at 50% 52%, #000 0 62%, rgba(0, 0, 0, 0.84) 74%, rgba(0, 0, 0, 0.24) 88%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 56% 78% at 50% 52%, #000 0 62%, rgba(0, 0, 0, 0.84) 74%, rgba(0, 0, 0, 0.24) 88%, transparent 100%);
 }
 
 .headline__portal-scene::after {
@@ -81,37 +62,10 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(48% 42% at 29% 71%, rgba(249, 156, 28, 0.22), transparent 58%),
-    linear-gradient(to bottom, rgba(255, 226, 174, 0.04), transparent 46%, rgba(20, 18, 17, 0.42) 100%);
+    radial-gradient(34% 34% at 30% 74%, rgba(249, 156, 28, 0.2), transparent 62%),
+    linear-gradient(to bottom, rgba(255, 226, 174, 0.03), transparent 52%, rgba(20, 18, 17, 0.22) 100%);
   mix-blend-mode: screen;
-  opacity: 0.7;
-}
-
-.headline__portal-panel {
-  position: absolute;
-  top: 6.2%;
-  bottom: 0;
-  z-index: 3;
-  width: 25%;
-  background:
-    linear-gradient(90deg, rgba(255, 226, 174, 0.08), rgba(9, 8, 7, 0.98) 18%, #050504 100%),
-    linear-gradient(180deg, #15120f, #070606 70%, #141211);
-  box-shadow:
-    inset 0 0 0 1px rgba(253, 247, 238, 0.035),
-    inset 0 0 28px rgba(0, 0, 0, 0.88),
-    0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-.headline__portal-panel--left {
-  left: -4.5%;
-  transform: skewY(6deg);
-  transform-origin: 100% 0;
-}
-
-.headline__portal-panel--right {
-  right: -4.5%;
-  transform: skewY(-6deg);
-  transform-origin: 0 0;
+  opacity: 0.5;
 }
 
 .headline__portal-glow {
@@ -181,13 +135,8 @@
     margin-bottom: 28px;
   }
 
-  .headline__portal-line,
   .headline__portal-scene {
-    left: 15%;
-    right: 15%;
-  }
-
-  .headline__portal-panel {
-    width: 27%;
+    left: 0;
+    right: 0;
   }
 }

@@ -37,8 +37,8 @@ export default function App() {
         {!entered && (
           <motion.div
             key="landing"
-            exit={{ opacity: 0, scale: 1.06, filter: 'blur(14px)' }}
-            transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, scale: 1.025, filter: 'blur(6px)' }}
+            transition={{ duration: 0.24, ease: 'linear' }}
             style={{ position: 'fixed', inset: 0, zIndex: 100, overflow: 'hidden' }}
           >
             <Landing onEnter={enterSite} />

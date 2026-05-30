@@ -461,7 +461,10 @@
 }
 
 .landing.is-opening .doorway__panel {
-  transition-duration: 1.38s;
+  transition:
+    transform 1.08s linear,
+    opacity 1.08s linear,
+    box-shadow 1.08s linear;
 }
 
 .landing__enter {

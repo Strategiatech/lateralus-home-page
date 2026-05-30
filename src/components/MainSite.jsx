@@ -23,9 +23,9 @@ export default function MainSite({ onHome }) {
   return (
     <motion.div
       className="site"
-      initial={{ opacity: 0, scale: 1.035, y: 10, filter: 'blur(12px)' }}
+      initial={{ opacity: 0, scale: 1.01, y: 0, filter: 'blur(4px)' }}
       animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
-      transition={{ duration: 0.96, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.28, ease: 'linear' }}
     >
       <header className="site__header">
         <a className="site__brand" href={homeHref} aria-label="Return to Lateralus doorway" onClick={handleHome}>

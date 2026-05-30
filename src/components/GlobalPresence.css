@@ -30,6 +30,14 @@
   color: var(--gold-soft);
 }
 
+.presence__copy {
+  margin-top: 18px;
+  max-width: 46ch;
+  color: var(--sand-dim);
+  font-size: clamp(0.88rem, 1.02vw, 1rem);
+  line-height: 1.58;
+}
+
 .presence__regions {
   list-style: none;
   display: flex;
