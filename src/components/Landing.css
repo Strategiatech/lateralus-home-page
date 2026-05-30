@@ -92,14 +92,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(18px, 3vh, 34px);
+  gap: clamp(16px, 2.4svh, 30px);
+  max-height: calc(100svh - 42px);
   transform-origin: 50% 45%;
   will-change: transform, filter;
 }
 
 .doorway {
   position: relative;
-  width: clamp(250px, 29vw, 380px);
+  width: clamp(250px, min(29vw, 45svh), 380px);
   aspect-ratio: 760 / 1024;
   padding: 0;
   border: 0;
@@ -491,11 +492,11 @@
 
 @media (max-width: 720px) {
   .landing__cluster {
-    gap: clamp(14px, 2.4vh, 24px);
+    gap: clamp(14px, 2.2svh, 24px);
   }
 
   .doorway {
-    width: clamp(250px, 46vw, 330px);
+    width: clamp(238px, min(46vw, 43svh), 330px);
   }
 
   .landing__halo {
