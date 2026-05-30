@@ -80,11 +80,23 @@ export default function MainSite({ onHome }) {
                 C-Suite Partners
               </a>
             </nav>
+
+            <div className="site__footer-nav">
+              <h2 className="site__footer-title">Global Locations</h2>
+              <span className="site__footer-loc">Sydney</span>
+              <span className="site__footer-loc">Singapore</span>
+              <span className="site__footer-loc">Dubai</span>
+              <span className="site__footer-loc">New York</span>
+              <span className="site__footer-loc">London</span>
+            </div>
           </div>
 
           <div className="site__footer-bottom">
             <span>© 2026 Lateralus Group. All rights reserved.</span>
-            <span>A symbol of transition and opportunity.</span>
+            <span>
+              Lateral intelligence. Parallel execution.{' '}
+              <span className="site__footer-accent">One ecosystem.</span>
+            </span>
           </div>
         </div>
       </footer>

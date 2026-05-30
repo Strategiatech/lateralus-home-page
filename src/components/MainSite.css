@@ -116,10 +116,9 @@
 }
 .site__footer-main {
   display: grid;
-  grid-template-columns: minmax(210px, 1.05fr) minmax(96px, 0.5fr) minmax(150px, 0.68fr);
+  grid-template-columns: minmax(200px, 1.5fr) 1fr 1fr 1fr;
   align-items: start;
-  justify-content: space-between;
-  gap: clamp(26px, 6vw, 170px);
+  gap: clamp(24px, 4vw, 88px);
 }
 .site__footer-intro {
   display: grid;
@@ -177,6 +176,14 @@ a.site__footer-link:hover {
 }
 .site__footer-link[aria-disabled='true'] {
   cursor: default;
+}
+.site__footer-loc {
+  color: rgba(253, 247, 238, 0.56);
+  font-size: clamp(0.86rem, 1vw, 0.98rem);
+  line-height: 1.25;
+}
+.site__footer-accent {
+  color: var(--gold-soft);
 }
 .site__footer-bottom {
   display: flex;
