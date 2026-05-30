@@ -1,6 +1,6 @@
 .headline {
   position: relative;
-  padding: clamp(86px, 17vh, 210px) var(--gutter) clamp(70px, 12vh, 150px);
+  padding: clamp(52px, 9vh, 112px) var(--gutter) clamp(44px, 7vh, 92px);
   border-bottom: 1px solid var(--hairline);
   overflow: hidden;
 }

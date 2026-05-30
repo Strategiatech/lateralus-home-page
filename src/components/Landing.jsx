@@ -58,8 +58,12 @@ export default function Landing({ onEnter }) {
             <motion.div className="door-scene" aria-hidden="true" animate={sceneReveal} transition={portalTransition} />
             <motion.div className="doorway__void" aria-hidden="true" animate={voidReveal} transition={portalTransition} />
             <motion.span className="doorway__aperture" aria-hidden="true" animate={apertureReveal} transition={portalTransition} />
-            <span className="doorway__panel doorway__panel--left" aria-hidden="true" />
-            <span className="doorway__panel doorway__panel--right" aria-hidden="true" />
+            <span className="doorway__panel doorway__panel--left" aria-hidden="true">
+              <span className="doorway__panel-edge" />
+            </span>
+            <span className="doorway__panel doorway__panel--right" aria-hidden="true">
+              <span className="doorway__panel-edge" />
+            </span>
           </div>
           <div className="doorway__lintel" />
         </button>

@@ -191,7 +191,30 @@ a.site__footer-link:hover {
 }
 
 @media (max-width: 640px) {
-  .site__nav { display: none; }
+  /* Stack the top bar: logo on top, nav as a compact centred row below
+     (kept visible — no hidden menu on mobile). */
+  .site__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    padding: 15px var(--gutter) 13px;
+  }
+
+  .site__header .site__brand {
+    min-height: 0;
+    justify-content: center;
+  }
+
+  .site__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px 18px;
+  }
+
+  .site__nav a {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
 }
 
 @media (max-width: 560px) {
