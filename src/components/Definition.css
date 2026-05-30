@@ -39,7 +39,7 @@
 }
 
 .definition__word {
-  font-size: clamp(1.85rem, 4.4vw, 3.75rem) !important;
+  font-size: clamp(1.5rem, 3.3vw, 2.7rem) !important;
   letter-spacing: 0.14em !important;
   text-indent: 0.14em !important;
 }

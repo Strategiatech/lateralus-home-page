@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { SeedOfLife } from './icons.jsx'
+import doorClosedTransparent from '../assets/landing/door-closed-transparent.png'
 import './Landing.css'
 
 export default function Landing({ onEnter }) {
@@ -21,24 +21,16 @@ export default function Landing({ onEnter }) {
     }
   }
 
-  const openState = hot || opening
   const portalTransition = opening
     ? { duration: 0.62, ease: [0.65, 0, 0.2, 1] }
     : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }
 
   const fade = opening ? { opacity: 0, transition: { duration: 0.6, ease: 'easeOut' } } : { opacity: 1 }
-  const sceneReveal = {
-    opacity: openState ? 1 : 0,
-    clipPath: openState ? 'inset(0% 0% 0% 0%)' : 'inset(0% 49% 0% 49%)',
-    scale: openState ? 1.025 : 1,
-  }
-  const voidReveal = {
-    opacity: openState ? 0.08 : 1,
-  }
-  const apertureReveal = {
-    opacity: openState ? 0.72 : 0,
-    scaleX: openState ? 1 : 0.025,
-  }
+  // The interior scene sits permanently behind the doors at full size; opening the
+  // panels simply uncovers it, rather than the scene expanding/fading in.
+  const sceneReveal = { opacity: 1, clipPath: 'inset(0% 0% 0% 0%)', scale: 1 }
+  const voidReveal = { opacity: 0.08 }
+  const apertureReveal = { opacity: 0.72, scaleX: 1 }
 
   return (
     <div className={`landing ${hot ? 'is-hot' : ''} ${opening ? 'is-opening' : ''}`}>
@@ -59,10 +51,15 @@ export default function Landing({ onEnter }) {
           onKeyDown={onKey}
         >
           <span className="doorway__glow" aria-hidden="true" />
+          <img className="doorway__frame" src={doorClosedTransparent} alt="" aria-hidden="true" />
+          <span className="doorway__gold-line" aria-hidden="true" />
+          <span className="doorway__spill" aria-hidden="true" />
           <div className="doorway__threshold">
             <motion.div className="door-scene" aria-hidden="true" animate={sceneReveal} transition={portalTransition} />
             <motion.div className="doorway__void" aria-hidden="true" animate={voidReveal} transition={portalTransition} />
             <motion.span className="doorway__aperture" aria-hidden="true" animate={apertureReveal} transition={portalTransition} />
+            <span className="doorway__panel doorway__panel--left" aria-hidden="true" />
+            <span className="doorway__panel doorway__panel--right" aria-hidden="true" />
           </div>
           <div className="doorway__lintel" />
         </button>
@@ -76,8 +73,7 @@ export default function Landing({ onEnter }) {
           onMouseLeave={() => setHot(false)}
           aria-label="Enter"
         >
-          <span className="landing__enter-tick" />
-          <SeedOfLife size={26} />
+          <span>ENTER</span>
         </motion.button>
       </div>
     </div>

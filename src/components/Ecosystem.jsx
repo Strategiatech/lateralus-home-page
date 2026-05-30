@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal.jsx'
-import { ArtPartners } from './CardArt.jsx'
 import strategiaLogo from '../assets/ecosystem/strategia-inline-glow.png'
-import csuiteLogo from '../assets/ecosystem/csuite-logo-reverse.svg'
+import csuiteLogo from '../assets/ecosystem/csuite-logo-final-reverse.svg'
+import csuiteBackground from '../assets/ecosystem/csuite-gradient-overlay.svg'
 import './Ecosystem.css'
 
 const CARDS = [
@@ -25,7 +25,7 @@ const CARDS = [
     href: 'https://c-suitepartners.com',
     external: true,
     logo: csuiteLogo,
-    Art: ArtPartners,
+    background: csuiteBackground,
   },
 ]
 
@@ -58,7 +58,9 @@ export default function Ecosystem() {
               aria-label={`${c.name} — ${c.role}`}
             >
               <div className="card__visual">
-                {c.Art ? <c.Art /> : null}
+                {c.background ? (
+                  <img className={`card__background card__background--${c.key}`} src={c.background} alt="" aria-hidden="true" />
+                ) : null}
                 <div className="card__logo-wrap">
                   <img className={`card__logo card__logo--${c.key}`} src={c.logo} alt={c.name} />
                 </div>

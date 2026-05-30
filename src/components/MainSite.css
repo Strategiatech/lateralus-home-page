@@ -4,7 +4,7 @@
   position: relative;
   min-height: 100vh;
   background:
-    radial-gradient(140% 80% at 50% -10%, #211f1e 0%, var(--black-1) 42%, #161514 100%);
+    radial-gradient(140% 82% at 50% -12%, #1d1a17 0%, var(--black-1) 46%, #0b0a09 100%);
 }
 
 /* cinematic edge vignette for depth — sits above content, below the header */

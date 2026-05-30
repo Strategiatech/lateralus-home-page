@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import Headline from './Headline.jsx'
 import Definition from './Definition.jsx'
 import Ecosystem from './Ecosystem.jsx'
+import GlobalPresence from './GlobalPresence.jsx'
 import Leadership from './Leadership.jsx'
 import Contact from './Contact.jsx'
 import markSandLogo from '../assets/logos/LATERALUS_MARK_SAND.svg'
@@ -39,8 +41,10 @@ export default function MainSite({ onHome }) {
       </header>
 
       <main id="top">
+        <Headline />
         <Definition />
         <Ecosystem />
+        <GlobalPresence />
         <Leadership />
         <Contact />
       </main>
@@ -54,8 +58,8 @@ export default function MainSite({ onHome }) {
                 <img className="site__brand-name site__brand-name--footer" src={wordmarkSandLogo} alt="Lateralus" />
               </a>
               <p className="site__footer-desc">
-                An investment and holding group. Building and backing the
-                companies that open new doors.
+                An operating group connecting talent, technology, intelligence
+                and influence through a portfolio of specialist companies.
               </p>
             </div>
 

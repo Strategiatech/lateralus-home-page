@@ -22,13 +22,13 @@
   max-width: var(--maxw);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(22px, 3.5vw, 54px);
+  grid-template-columns: repeat(3, 170px);
+  justify-content: center;
+  gap: clamp(34px, 4.4vw, 76px);
   justify-items: center;
 }
 
 .leadership__item {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -37,14 +37,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 250px;
+  width: 170px;
+  max-width: 100%;
 }
 
 .person__frame {
   position: relative;
   width: 100%;
-  max-width: 250px;
+  max-width: 170px;
   aspect-ratio: 1 / 1.28;
   border-radius: 3px;
   padding: 1px;
