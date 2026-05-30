@@ -9,9 +9,11 @@ const CARDS = [
   {
     key: 'strategia',
     name: 'Strategia',
-    role: 'AI Driven Workforce Intelligence',
-    description:
-      'Predict performance before it lands. Strategia is a multi-module workforce intelligence platform for HR, Talent, and Executive teams, built on structured scientific frameworks to automate 80% of recruitment and compound every hire into the engine that finds the next one.',
+    role: 'AI-Native Workforce Intelligence',
+    description: [
+      'Strategia is the group’s scalable technology platform, built to help organisations assess people, predict performance and make better workforce decisions at scale.',
+      'Built on Microsoft Azure and aligned with Microsoft’s global AI ecosystem, Strategia connects psychometrics, AI interviews, CV intelligence and workforce data into one enterprise decision-support system.',
+    ],
     href: 'https://strategiatech.io',
     external: true,
     logo: strategiaLogo,
@@ -20,8 +22,10 @@ const CARDS = [
     key: 'csuite',
     name: 'C-Suite Partners',
     role: 'Executive Search & Leadership Advisory',
-    description:
-      'Executive search and leadership advisory. C-Suite Partners connects organisations with the senior leaders who shape their next chapter, and advises on building teams that last.',
+    description: [
+      'C-Suite Partners is a global executive search and leadership advisory firm working with some of the world’s most prominent healthcare, life sciences and growth organisations.',
+      'The firm partners with boards, investors and executive teams to secure senior leaders for complex, high-impact appointments across international markets.',
+    ],
     href: 'https://c-suitepartners.com',
     external: true,
     logo: csuiteLogo,
@@ -70,7 +74,9 @@ export default function Ecosystem() {
                 <div>
                   <div className="card__role">{c.role}</div>
                   <h3 className="card__name">{c.name}</h3>
-                  <p className="card__description">{c.description}</p>
+                  {c.description.map((para, idx) => (
+                    <p key={idx} className="card__description">{para}</p>
+                  ))}
                 </div>
                 <span className="card__arrow"><Arrow /></span>
               </div>

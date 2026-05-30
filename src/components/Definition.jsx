@@ -1,6 +1,6 @@
 import Wordmark from './Wordmark.jsx'
 import Reveal from './Reveal.jsx'
-import { FlowerOfLife, GlyphSeed, GlyphGrid, GlyphStar, GlyphRing } from './icons.jsx'
+import { FlowerOfLife } from './icons.jsx'
 import './Definition.css'
 
 export default function Definition() {
@@ -11,13 +11,6 @@ export default function Definition() {
       </div>
 
       <div className="definition__inner">
-        <div className="definition__rail">
-          <GlyphSeed />
-          <GlyphGrid />
-          <GlyphStar />
-          <GlyphRing />
-        </div>
-
         <Reveal className="definition__left">
           <Wordmark as="h2" className="definition__word" />
           <div className="definition__phon">
@@ -27,7 +20,6 @@ export default function Definition() {
           <div className="definition__pos">noun</div>
           <div className="definition__hr" />
           <div className="definition__sense">
-            <span className="definition__num">1.</span>
             <p>
               The power of lateral intelligence — the ability to connect people,
               systems, and ideas in parallel to create compounded advantage.
@@ -38,17 +30,21 @@ export default function Definition() {
         <div className="definition__divider" />
 
         <Reveal className="definition__body" delay={0.12}>
+          <h3 className="definition__body-title">The Operating Group</h3>
+          <div className="definition__hr" />
           <p>
-            Lateralus represents the power of lateral intelligence — the ability to
-            think beyond traditional boundaries and connect people, systems, and
-            ideas in parallel to create better outcomes.
+            Lateralus is an operating group built around C-Suite Partners and
+            Strategia, connecting executive search, leadership advisory and
+            AI-powered workforce intelligence into one symbiotic ecosystem.
           </p>
           <p>
-            At its core, Lateralus is built on the belief that the greatest
-            advantage comes not from isolated expertise, but from interconnected
-            thinking. By bringing together human capability, technology,
-            intelligence, and execution, we create systems that compound value over
-            time.
+            The group is led by founders, CEOs and operators with proven
+            experience building, scaling and commercialising businesses across
+            international markets.
+          </p>
+          <p>
+            Lateralus is designed to create advantage through people, technology,
+            data, relationships and execution.
           </p>
         </Reveal>
       </div>

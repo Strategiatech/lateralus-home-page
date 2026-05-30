@@ -33,7 +33,7 @@ export default function MainSite({ onHome }) {
           <img className="site__brand-name" src={wordmarkSandLogo} alt="Lateralus" />
         </a>
         <nav className="site__nav">
-          <a href="#about">Definition</a>
+          <a href="#about">Group</a>
           <a href="#ecosystem">Ecosystem</a>
           <a href="#leadership">Leadership</a>
           <a href="#contact">Contact</a>
@@ -64,10 +64,10 @@ export default function MainSite({ onHome }) {
             </div>
 
             <nav className="site__footer-nav" aria-label="Group">
-              <h2 className="site__footer-title">Group</h2>
-              <a className="site__footer-link" href="#about">About</a>
-              <a className="site__footer-link" href="#leadership">Team</a>
-              <a className="site__footer-link" href="#ecosystem">Companies</a>
+              <h2 className="site__footer-title">Explore</h2>
+              <a className="site__footer-link" href="#about">Group</a>
+              <a className="site__footer-link" href="#ecosystem">Ecosystem</a>
+              <a className="site__footer-link" href="#leadership">Leadership</a>
               <a className="site__footer-link" href="#contact">Contact</a>
             </nav>
 

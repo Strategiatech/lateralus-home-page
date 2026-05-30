@@ -23,25 +23,17 @@
 .definition__inner {
   position: relative;
   display: grid;
-  grid-template-columns: auto 0.92fr 1px 0.86fr;
-  gap: clamp(24px, 3.6vw, 54px);
+  grid-template-columns: minmax(0, 0.92fr) 1px minmax(230px, 0.8fr);
+  gap: clamp(18px, 2.8vw, 48px);
   align-items: start;
   max-width: var(--maxw);
   margin: 0 auto;
 }
 
-.definition__rail {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding-top: 10px;
-  opacity: 0.72;
-}
-
 .definition__word {
   font-size: clamp(1.5rem, 3.3vw, 2.7rem) !important;
   letter-spacing: 0.14em !important;
-  text-indent: 0.14em !important;
+  text-indent: 0 !important;
 }
 
 .definition__phon {
@@ -84,15 +76,7 @@
 }
 
 .definition__sense {
-  display: flex;
-  gap: 15px;
   max-width: 31ch;
-}
-
-.definition__num {
-  font-family: var(--font-display);
-  color: var(--gold);
-  font-size: 0.84rem;
 }
 
 .definition__sense p {
@@ -108,18 +92,31 @@
 }
 
 .definition__body {
-  padding-top: 6px;
+  padding-top: 0;
   max-width: 44ch;
 }
 
+/* Matches the LATERALUS wordmark (same size + line-height) so the two column
+   headings sit at the same height and align across the divider. */
+.definition__body-title {
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.3vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
 .definition__body p {
-  font-size: clamp(0.78rem, 0.96vw, 0.9rem);
-  line-height: 1.72;
-  color: var(--sand-dim);
+  font-size: clamp(0.72rem, 0.86vw, 0.84rem);
+  line-height: 1.62;
+  color: var(--sand);
 }
 
 .definition__body p + p {
-  margin-top: 1.35em;
+  margin-top: 1.18em;
 }
 
 .definition__body em {
@@ -127,15 +124,10 @@
   font-style: normal;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 680px) {
   .definition__inner {
     grid-template-columns: 1fr;
     gap: 34px;
-  }
-
-  .definition__rail {
-    flex-direction: row;
-    gap: 22px;
   }
 
   .definition__divider {
