@@ -5,8 +5,8 @@ import Ecosystem from './Ecosystem.jsx'
 import GlobalPresence from './GlobalPresence.jsx'
 import Leadership from './Leadership.jsx'
 import Contact from './Contact.jsx'
-import markGlowLogo from '../assets/logos/LATERALUS_MARK_GLOW.svg'
-import wordmarkGlowLogo from '../assets/logos/LATERALUS_WORDMARK_GLOW.svg'
+import markSandLogo from '../assets/logos/LATERALUS_MARK_SAND.svg'
+import wordmarkSandLogo from '../assets/logos/LATERALUS_WORDMARK_SAND.svg'
 import './MainSite.css'
 
 export default function MainSite({ onHome }) {
@@ -29,8 +29,8 @@ export default function MainSite({ onHome }) {
     >
       <header className="site__header">
         <a className="site__brand" href={homeHref} aria-label="Return to Lateralus doorway" onClick={handleHome}>
-          <img className="site__brand-mark" src={markGlowLogo} alt="" aria-hidden="true" />
-          <img className="site__brand-name" src={wordmarkGlowLogo} alt="Lateralus" />
+          <img className="site__brand-mark" src={markSandLogo} alt="" aria-hidden="true" />
+          <img className="site__brand-name" src={wordmarkSandLogo} alt="Lateralus" />
         </a>
         <nav className="site__nav">
           <a href="#about">Group</a>
@@ -54,8 +54,8 @@ export default function MainSite({ onHome }) {
           <div className="site__footer-main">
             <div className="site__footer-intro">
               <a className="site__brand site__footer-brand" href={homeHref} aria-label="Return to Lateralus doorway" onClick={handleHome}>
-                <img className="site__brand-mark site__brand-mark--footer" src={markGlowLogo} alt="" aria-hidden="true" />
-                <img className="site__brand-name site__brand-name--footer" src={wordmarkGlowLogo} alt="Lateralus" />
+                <img className="site__brand-mark site__brand-mark--footer" src={markSandLogo} alt="" aria-hidden="true" />
+                <img className="site__brand-name site__brand-name--footer" src={wordmarkSandLogo} alt="Lateralus" />
               </a>
               <p className="site__footer-desc">
                 An operating group connecting talent, technology, intelligence

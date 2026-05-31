@@ -52,11 +52,11 @@
   left: clamp(-28px, -2.2vw, -18px);
   top: 50%;
   z-index: -1;
-  width: clamp(31px, 3vw, 45px);
-  height: clamp(31px, 3vw, 45px);
+  width: clamp(46px, 4.4vw, 66px);
+  height: clamp(46px, 4.4vw, 66px);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(249, 156, 28, 0.7), rgba(249, 156, 28, 0.26) 38%, transparent 72%);
-  filter: blur(16px);
+  background: radial-gradient(circle, rgba(255, 192, 92, 0.9), rgba(249, 156, 28, 0.36) 40%, transparent 72%);
+  filter: blur(18px);
   transform: translateY(-50%);
   pointer-events: none;
 }
