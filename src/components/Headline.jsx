@@ -20,6 +20,9 @@ export default function Headline() {
           Lateralus is an operating group building a connected portfolio across
           talent, technology, intelligence, and influence.
         </p>
+        <p className="headline__sub headline__sub--calm">
+          When everything is aligned, complexity becomes calm.
+        </p>
         <span className="headline__rule" aria-hidden="true" />
       </Reveal>
     </section>

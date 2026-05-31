@@ -55,8 +55,8 @@
   width: clamp(31px, 3vw, 45px);
   height: clamp(31px, 3vw, 45px);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(249, 156, 28, 0.42), rgba(249, 156, 28, 0.14) 38%, transparent 70%);
-  filter: blur(14px);
+  background: radial-gradient(circle, rgba(249, 156, 28, 0.7), rgba(249, 156, 28, 0.26) 38%, transparent 72%);
+  filter: blur(16px);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -67,9 +67,9 @@
   height: auto;
   opacity: 0.98;
   filter:
-    drop-shadow(0 0 8px rgba(253, 247, 238, 0.2))
-    drop-shadow(0 0 14px rgba(249, 156, 28, 0.72))
-    drop-shadow(0 0 34px rgba(249, 156, 28, 0.34));
+    drop-shadow(0 0 5px rgba(255, 219, 153, 0.55))
+    drop-shadow(0 0 14px rgba(249, 156, 28, 0.95))
+    drop-shadow(0 0 34px rgba(249, 156, 28, 0.52));
 }
 
 .site__brand-name {
@@ -137,8 +137,8 @@
   width: clamp(31px, 3vw, 45px);
   height: clamp(31px, 3vw, 45px);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(249, 156, 28, 0.38), rgba(249, 156, 28, 0.14) 38%, transparent 70%);
-  filter: blur(14px);
+  background: radial-gradient(circle, rgba(249, 156, 28, 0.68), rgba(249, 156, 28, 0.24) 38%, transparent 72%);
+  filter: blur(16px);
   transform: translateY(-50%);
   pointer-events: none;
 }
