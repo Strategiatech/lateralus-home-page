@@ -244,6 +244,19 @@ a.site__footer-link:hover {
   }
 }
 
+/* Tablet & large phones (561–860px): the 4-up desktop grid squeezes the link
+   groups so hard that "C-Suite Partners" / "Global Locations" wrap awkwardly.
+   Drop the brand onto its own full-width row and give the three link groups
+   equal, roomy columns. */
+@media (max-width: 860px) {
+  .site__footer-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .site__footer-intro {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 560px) {
   .site__footer-main {
     grid-template-columns: 1fr;
