@@ -27,8 +27,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 22px var(--gutter);
-  background: linear-gradient(to bottom, rgba(20, 19, 18, 0.82), rgba(20, 19, 18, 0));
-  backdrop-filter: blur(6px);
+  /* Solid-ish background, NO backdrop-filter: on iOS Safari a sticky header
+     with backdrop-filter re-rasterises the blur every frame during scroll,
+     which reads as the header "shaking"/flickering. An opaque gradient hides
+     the content behind it cleanly and stays stable. */
+  background: linear-gradient(to bottom, rgba(18, 17, 16, 0.96) 60%, rgba(18, 17, 16, 0.72) 100%);
 }
 .site__brand {
   position: relative;
