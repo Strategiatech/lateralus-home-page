@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px var(--gutter);
+  padding: 18px var(--gutter);
   /* Solid-ish background, NO backdrop-filter: on iOS Safari a sticky header
      with backdrop-filter re-rasterises the blur every frame during scroll,
      which reads as the header "shaking"/flickering. An opaque gradient hides
@@ -45,7 +45,7 @@
   position: relative;
   flex: 0 0 auto;
   width: auto;
-  min-height: clamp(55px, 5.7vw, 82px);
+  min-height: clamp(46px, 4vw, 58px);
   justify-content: flex-start;
 }
 
