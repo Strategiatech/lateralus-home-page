@@ -78,7 +78,7 @@ export default function MainSite({ onHome }) {
 
             <nav className="site__footer-nav" aria-label="Companies">
               <h2 className="site__footer-title">Companies</h2>
-              <a className="site__footer-link" href="https://strategiatech.io" target="_blank" rel="noopener noreferrer">
+              <a className="site__footer-link" href="https://strategiatech.ai" target="_blank" rel="noopener noreferrer">
                 Strategia
               </a>
               <a className="site__footer-link" href="https://c-suitepartners.com" target="_blank" rel="noopener noreferrer">

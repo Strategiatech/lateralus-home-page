@@ -14,7 +14,7 @@ const CARDS = [
       'Strategia is the group’s scalable technology platform, built to help organisations assess people, predict performance and make better workforce decisions at scale.',
       'Built on Microsoft Azure and aligned with Microsoft’s global AI ecosystem, Strategia connects psychometrics, AI interviews, CV intelligence and workforce data into one enterprise decision-support system.',
     ],
-    href: 'https://strategiatech.io',
+    href: 'https://strategiatech.ai',
     external: true,
     logo: strategiaLogo,
   },
