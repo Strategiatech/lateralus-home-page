@@ -21,10 +21,15 @@ export default function MainSite({ onHome }) {
   }
 
   return (
+    // IMPORTANT: do NOT animate `filter` here. Framer-Motion leaves the final
+    // `filter` value inline on .site permanently, and a filter on the sticky
+    // header's scroll ancestor forces iOS Safari to re-rasterise the header on
+    // every scroll frame (it "shakes"). Opacity + scale give the same intro
+    // feel with nothing left behind.
     <motion.div
       className="site"
-      initial={{ opacity: 0, scale: 1.01, y: 0, filter: 'blur(4px)' }}
-      animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, scale: 1.01 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.28, ease: 'linear' }}
     >
       <header className="site__header">
