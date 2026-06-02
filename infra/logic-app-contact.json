@@ -1,0 +1,126 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "description": "Lateralus website contact form -> Logic App (Consumption) that emails info@lateralusgroup.ai via the Office 365 Outlook connector. The 'office365' connection must be authorised once in the portal by signing in as info@lateralusgroup.ai."
+  },
+  "parameters": {
+    "location": { "type": "string", "defaultValue": "australiaeast" },
+    "workflowName": { "type": "string", "defaultValue": "logic-lateralus-contact" },
+    "connectionName": { "type": "string", "defaultValue": "office365" },
+    "mailTo": { "type": "string", "defaultValue": "info@lateralusgroup.ai" }
+  },
+  "variables": {
+    "office365ApiId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/office365')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/connections",
+      "apiVersion": "2016-06-01",
+      "name": "[parameters('connectionName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "displayName": "[parameters('mailTo')]",
+        "api": { "id": "[variables('office365ApiId')]" }
+      }
+    },
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2019-05-01",
+      "name": "[parameters('workflowName')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/connections', parameters('connectionName'))]"
+      ],
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "$connections": { "defaultValue": {}, "type": "Object" }
+          },
+          "triggers": {
+            "manual": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "email": { "type": "string" },
+                    "company": { "type": "string" },
+                    "message": { "type": "string" },
+                    "company_website": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "actions": {
+            "Parse_body": {
+              "type": "Compose",
+              "runAfter": {},
+              "inputs": "@json(string(triggerBody()))"
+            },
+            "Condition_honeypot": {
+              "type": "If",
+              "runAfter": { "Parse_body": ["Succeeded"] },
+              "expression": {
+                "equals": [ "@coalesce(outputs('Parse_body')?['company_website'], '')", "" ]
+              },
+              "actions": {
+                "Send_an_email_V2": {
+                  "type": "ApiConnection",
+                  "runAfter": {},
+                  "inputs": {
+                    "host": {
+                      "connection": { "name": "@parameters('$connections')['office365']['connectionId']" }
+                    },
+                    "method": "post",
+                    "path": "/v2/Mail",
+                    "body": {
+                      "To": "[parameters('mailTo')]",
+                      "Subject": "@{concat('New enquiry — ', coalesce(outputs('Parse_body')?['name'], 'Website'))}",
+                      "Body": "<p><strong>Name:</strong> @{coalesce(outputs('Parse_body')?['name'], '')}</p><p><strong>Email:</strong> @{coalesce(outputs('Parse_body')?['email'], '')}</p><p><strong>Company:</strong> @{coalesce(outputs('Parse_body')?['company'], '')}</p><p><strong>Message:</strong><br>@{replace(coalesce(outputs('Parse_body')?['message'], ''), decodeUriComponent('%0A'), '<br>')}</p><hr><p style=\"color:#888;font-size:12px\">Sent from the lateralusgroup.ai contact form.</p>",
+                      "Importance": "Normal",
+                      "ReplyTo": "@{coalesce(outputs('Parse_body')?['email'], '')}"
+                    }
+                  }
+                }
+              },
+              "else": { "actions": {} }
+            },
+            "Response": {
+              "type": "Response",
+              "kind": "Http",
+              "runAfter": { "Condition_honeypot": ["Succeeded"] },
+              "inputs": {
+                "statusCode": 200,
+                "headers": { "Content-Type": "application/json" },
+                "body": { "ok": true }
+              }
+            }
+          },
+          "outputs": {}
+        },
+        "parameters": {
+          "$connections": {
+            "value": {
+              "office365": {
+                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connectionName'))]",
+                "connectionName": "[parameters('connectionName')]",
+                "id": "[variables('office365ApiId')]"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "workflowName": { "type": "string", "value": "[parameters('workflowName')]" },
+    "connectionName": { "type": "string", "value": "[parameters('connectionName')]" }
+  }
+}

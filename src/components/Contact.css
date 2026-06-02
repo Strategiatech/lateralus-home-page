@@ -171,6 +171,37 @@
   line-height: 1.5;
 }
 
+.contact__status--ok {
+  color: var(--gold-soft);
+}
+
+.contact__status--err {
+  color: #e7a17a;
+}
+
+.contact__status--err a {
+  color: var(--gold-soft);
+  text-decoration: underline;
+}
+
+.contact__button:disabled {
+  opacity: 0.55;
+  cursor: default;
+  transform: none;
+}
+
+/* Honeypot — visually removed but still in the DOM for bots to fill */
+.contact__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (max-width: 820px) {
   .contact__inner,
   .contact__form {
