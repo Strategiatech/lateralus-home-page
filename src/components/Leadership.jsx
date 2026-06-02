@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx'
 import { SeedOfLife } from './icons.jsx'
 import michaelMurrayPhoto from '../assets/leadership/michael-murray.png'
 import jamesScottPhoto from '../assets/leadership/james-scott.png'
-import davidTaylorPhoto from '../assets/leadership/david-taylor-profile.jpeg'
+import davidTaylorPhoto from '../assets/leadership/david-taylor-bw-dark.jpg'
 import './Leadership.css'
 
 const PEOPLE = [
@@ -33,8 +33,8 @@ const PEOPLE = [
     name: 'David Taylor',
     role: 'Group Managing Director',
     photo: davidTaylorPhoto,
-    position: '50% 22%',
-    scale: 1.12,
+    position: '50% 14%',
+    scale: 1.25,
     origin: '50% 20%',
     bio: [
       "David Taylor is Group Managing Director of Lateralus, supporting international growth, enterprise delivery and operating execution across the group's core markets.",
