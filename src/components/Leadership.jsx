@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx'
 import { SeedOfLife } from './icons.jsx'
 import michaelMurrayPhoto from '../assets/leadership/michael-murray.png'
 import jamesScottPhoto from '../assets/leadership/james-scott.png'
-import davidTaylorPhoto from '../assets/leadership/david-taylor-bw-dark.jpg'
+import davidTaylorPhoto from '../assets/leadership/david-taylor-bw-white.jpg'
 import './Leadership.css'
 
 const PEOPLE = [
