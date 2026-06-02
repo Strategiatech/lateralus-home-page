@@ -8,7 +8,7 @@
     "location": { "type": "string", "defaultValue": "australiaeast" },
     "workflowName": { "type": "string", "defaultValue": "logic-lateralus-contact" },
     "connectionName": { "type": "string", "defaultValue": "office365" },
-    "mailTo": { "type": "string", "defaultValue": "info@lateralusgroup.ai" }
+    "mailTo": { "type": "string", "defaultValue": "minghao.qu@strategiatech.ai;james.scott@lateralusgroup.ai;michael.murray@lateralusgroup.ai" }
   },
   "variables": {
     "office365ApiId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/office365')]"
