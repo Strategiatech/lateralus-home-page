@@ -12,7 +12,7 @@ export default function Definition() {
 
       <div className="definition__inner">
         <Reveal className="definition__body">
-          <h3 className="definition__body-title">The Operating Group</h3>
+          <h3 className="definition__body-title">Operating Group</h3>
           <div className="definition__hr" />
           <p>
             Lateralus is an operating group built around C-Suite Partners and
