@@ -106,6 +106,12 @@
   text-transform: uppercase;
 }
 
+.contact__form label small {
+  color: rgba(253, 247, 238, 0.34);
+  font-size: 0.58rem;
+  font-weight: 500;
+}
+
 .contact__form input,
 .contact__form textarea {
   width: 100%;
@@ -133,6 +139,7 @@
   background: rgba(253, 247, 238, 0.055);
 }
 
+.contact__phone,
 .contact__message,
 .contact__button,
 .contact__status {
@@ -191,15 +198,19 @@
 }
 
 /* Honeypot — visually removed but still in the DOM for bots to fill */
-.contact__hp {
+.contact__form .contact__hp {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
+  margin: -1px;
   padding: 0;
   border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   opacity: 0;
+  overflow: hidden;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 820px) {

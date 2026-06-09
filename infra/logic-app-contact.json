@@ -50,6 +50,8 @@
                   "properties": {
                     "name": { "type": "string" },
                     "email": { "type": "string" },
+                    "title": { "type": "string" },
+                    "phone": { "type": "string" },
                     "company": { "type": "string" },
                     "message": { "type": "string" },
                     "company_website": { "type": "string" }
@@ -83,7 +85,7 @@
                     "body": {
                       "To": "[parameters('mailTo')]",
                       "Subject": "@{concat('New enquiry — ', coalesce(outputs('Parse_body')?['name'], 'Website'))}",
-                      "Body": "<p><strong>Name:</strong> @{coalesce(outputs('Parse_body')?['name'], '')}</p><p><strong>Email:</strong> @{coalesce(outputs('Parse_body')?['email'], '')}</p><p><strong>Company:</strong> @{coalesce(outputs('Parse_body')?['company'], '')}</p><p><strong>Message:</strong><br>@{replace(coalesce(outputs('Parse_body')?['message'], ''), decodeUriComponent('%0A'), '<br>')}</p><hr><p style=\"color:#888;font-size:12px\">Sent from the lateralusgroup.ai contact form.</p>",
+                      "Body": "<p><strong>Name:</strong> @{coalesce(outputs('Parse_body')?['name'], '')}</p><p><strong>Email:</strong> @{coalesce(outputs('Parse_body')?['email'], '')}</p><p><strong>Title:</strong> @{coalesce(outputs('Parse_body')?['title'], '')}</p><p><strong>Phone number:</strong> @{coalesce(outputs('Parse_body')?['phone'], '')}</p><p><strong>Company:</strong> @{coalesce(outputs('Parse_body')?['company'], '')}</p><p><strong>Message:</strong><br>@{replace(coalesce(outputs('Parse_body')?['message'], ''), decodeUriComponent('%0A'), '<br>')}</p><hr><p style=\"color:#888;font-size:12px\">Sent from the lateralusgroup.ai contact form.</p>",
                       "Importance": "Normal",
                       "ReplyTo": "@{coalesce(outputs('Parse_body')?['email'], '')}"
                     }

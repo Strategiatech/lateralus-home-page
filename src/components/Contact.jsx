@@ -38,6 +38,8 @@ export default function Contact() {
         body: JSON.stringify({
           name: data.name || '',
           email: data.email || '',
+          title: data.title || '',
+          phone: data.phone || '',
           company: data.company || '',
           message: data.message || '',
         }),
@@ -80,7 +82,15 @@ export default function Contact() {
             </label>
             <label>
               <span>Company</span>
-              <input name="company" autoComplete="organization" />
+              <input name="company" autoComplete="organization" required />
+            </label>
+            <label>
+              <span>Title</span>
+              <input name="title" autoComplete="organization-title" required />
+            </label>
+            <label className="contact__phone">
+              <span>Phone number <small>Optional</small></span>
+              <input name="phone" type="tel" autoComplete="tel" />
             </label>
             <label className="contact__message">
               <span>Message</span>
