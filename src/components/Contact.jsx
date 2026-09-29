@@ -3,12 +3,12 @@ import Reveal from './Reveal.jsx'
 import './Contact.css'
 
 // Public endpoint of the Lateralus contact Logic App (Consumption) in the
-// lateralus-prod subscription. It emails info@lateralusgroup.ai via the
+// StrategiaSGP lateralus-prod subscription (new tenant). It emails info@lateralusgroup.ai via the
 // Office 365 Outlook connector (authorised as info@). Safe to expose
 // client-side — same model as any form-backend endpoint; abuse is limited by
 // the honeypot and the fact it only ever mails info@.
 const CONTACT_ENDPOINT =
-  'https://prod-29.australiaeast.logic.azure.com:443/workflows/27e18d9bd87541c59a644a0a3b8eb1e9/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=lsG173e1vC3AM0VZBgaglmQUs8xVaLvvrD_zE82dOWM'
+  'https://prod-31.australiaeast.logic.azure.com:443/workflows/9944c3d007304caa86280f0a5293aee2/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=cACYhYFXs8EaQ44HfsRvilc7jzwQ67_n06X9jCRNNNo'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | success | error
